@@ -10,8 +10,8 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { providePrimeNG } from 'primeng/config';
-import { routes } from './app.routes';
-import { AppPreset } from './app.theme';
+import { AppPreset } from '../app.theme';
+import { routes } from '../routes/app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
