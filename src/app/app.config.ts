@@ -5,11 +5,13 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
 import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
+import { providePrimeNG } from 'primeng/config';
+import { routes } from './app.routes';
+import { AppPreset } from './app.theme';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,5 +19,13 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
+    providePrimeNG({
+      theme: {
+        preset: AppPreset,
+        options: {
+          darkModeSelector: '.app-dark-mode',
+        },
+      },
+    }),
   ],
 };
