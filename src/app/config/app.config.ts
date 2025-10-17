@@ -3,13 +3,10 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
 } from '@angular/core';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-
-import {
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
 import { providePrimeNG } from 'primeng/config';
+
 import { AppPreset } from '../app.theme';
 import { routes } from '../routes/app.routes';
 
