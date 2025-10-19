@@ -1,0 +1,20 @@
+<header>
+  <p-toolbar class="flex-col md:flex-row">
+    <ng-template #start>
+      <p-button class="hidden md:block" icon="pi pi-home" [routerLink]="homeLink"></p-button>
+      <ng-container *ngTemplateOutlet="headerStart"></ng-container>
+      <div class="ml-auto md:hidden">
+        <p-menu #menu [model]="items" [popup]="true"></p-menu>
+        <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"></p-button>
+      </div>
+    </ng-template>
+
+    <ng-template #center>
+      <ng-container *ngTemplateOutlet="headerCenter"></ng-container>
+    </ng-template>
+
+    <ng-template #end>
+      <ng-container *ngTemplateOutlet="headerEnd"></ng-container>
+    </ng-template>
+  </p-toolbar>
+</header>
