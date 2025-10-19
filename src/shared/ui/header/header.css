@@ -1,5 +1,6 @@
 :host ::ng-deep .p-toolbar > * {
   width: 100%;
+  gap: 8px;
 }
 
 @media screen and (min-width: 48rem) {

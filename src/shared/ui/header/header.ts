@@ -6,10 +6,11 @@ import { MenuModule } from 'primeng/menu';
 import { ToolbarModule } from 'primeng/toolbar';
 
 import { LINK_CATALOG } from '@shared/config';
+import { DarkModeSwitcher } from '@shared/ui';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterModule, ToolbarModule, ButtonModule, MenuModule],
+  imports: [CommonModule, RouterModule, DarkModeSwitcher, ToolbarModule, ButtonModule, MenuModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
