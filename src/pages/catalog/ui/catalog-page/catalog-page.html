@@ -8,4 +8,12 @@
   </ng-template>
 </app-header>
 
-<main class="mt-4 flex flex-col gap-4 border-2"></main>
+<p-card class="mt-4">
+  <main>
+    @for (cinema of cinemaCatalog$ | async; track cinema.id) {
+      <app-cinema-card [cinema]="cinema"></app-cinema-card>
+    } @empty {
+      <p>No info</p>
+    }
+  </main>
+</p-card>

@@ -1,3 +1,4 @@
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
@@ -8,6 +9,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideRouter } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
 
+import { appProductionInterceptor } from '@app/api/app-production-interceptor';
+
 import { routes } from '../routes/app.routes';
 import { AppPreset } from '../theme/app.theme';
 
@@ -17,6 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
+    provideHttpClient(withFetch(), withInterceptors([appProductionInterceptor])),
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {
