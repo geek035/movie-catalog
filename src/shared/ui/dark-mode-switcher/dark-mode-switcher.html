@@ -1,1 +1,7 @@
-<p-button #button [icon]="switcherIcon()" [text]="true" (onClick)="toggleNightMode()"></p-button>
+<p-button
+  [icon]="switcherIcon()"
+  [text]="true"
+  (onClick)="handleClick()"
+  [label]="switcherLabel()"
+  [fluid]="true"
+></p-button>

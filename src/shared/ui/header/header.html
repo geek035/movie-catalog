@@ -4,10 +4,7 @@
       <p-button class="hidden md:block" icon="pi pi-home" [routerLink]="homeLink"></p-button>
       <app-dark-mode-switcher class="hidden md:block"></app-dark-mode-switcher>
       <ng-container *ngTemplateOutlet="headerStart"></ng-container>
-      <div class="ml-auto md:hidden">
-        <p-menu #menu [model]="items" [popup]="true"></p-menu>
-        <p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"></p-button>
-      </div>
+      <app-header-menu-items class="ml-auto md:hidden"></app-header-menu-items>
     </ng-template>
 
     <ng-template #center>

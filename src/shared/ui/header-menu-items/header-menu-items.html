@@ -1,0 +1,15 @@
+<p-menu #menu [model]="items" [popup]="true">
+  <ng-template #item let-item>
+    <a pRipple class="p-menu-item-link flex items-center">
+      <span [class]="item.icon"></span>
+      <span>{{ item.label }}</span>
+    </a>
+  </ng-template>
+
+  <ng-template #end>
+    <div class="flex w-full items-center rounded-md border-2">
+      <app-dark-mode-switcher class="w-full" [showLabel]="true"></app-dark-mode-switcher>
+    </div>
+  </ng-template>
+</p-menu>
+<p-button (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"></p-button>
