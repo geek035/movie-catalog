@@ -9,10 +9,20 @@ import { CinemaCatalogApiService } from '@pages/catalog/api/cinema-catalog-api.s
 import { Header, TextSearch } from '@shared/ui';
 
 import { CinemaCard } from '../cinema-card/cinema-card';
+import { CinemaDialog } from '../cinema-dialog/cinema-dialog';
 
 @Component({
   selector: 'app-catalog-page',
-  imports: [UpperCasePipe, AsyncPipe, Header, TextSearch, CinemaCard, ButtonModule, CardModule],
+  imports: [
+    UpperCasePipe,
+    AsyncPipe,
+    Header,
+    TextSearch,
+    CinemaCard,
+    ButtonModule,
+    CardModule,
+    CinemaDialog,
+  ],
   templateUrl: './catalog-page.html',
 })
 export class CatalogPage {

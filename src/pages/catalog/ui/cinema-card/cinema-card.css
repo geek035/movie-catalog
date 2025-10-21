@@ -7,3 +7,7 @@
   flex-grow: 1;
   justify-content: space-around;
 }
+
+:host ::ng-deep .p-button {
+  text-align: start;
+}

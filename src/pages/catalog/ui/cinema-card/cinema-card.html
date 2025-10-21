@@ -15,7 +15,9 @@
 
   <ng-template #title>
     <div class="flex w-full items-center gap-2">
-      <span>{{ cinema().title }}</span>
+      <p-button size="small" class="bg-highlight rounded-2xl" (click)="handleTitleClick()">
+        {{ cinema().title }}
+      </p-button>
       <p-tag class="ml-auto" [value]="cinema().year.toString()" severity="contrast"></p-tag>
     </div>
   </ng-template>
