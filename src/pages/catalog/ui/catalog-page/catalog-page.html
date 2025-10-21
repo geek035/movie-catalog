@@ -1,0 +1,28 @@
+<app-header>
+  <ng-template #headerStart>
+    <h1 class="text-primary text-2xl font-bold md:ml-4">{{ title | uppercase }}</h1>
+  </ng-template>
+
+  <ng-template #headerEnd>
+    <app-text-search
+      class="w-48 md:w-[380px]"
+      (textSearch)="handleTextSearchUpdate($event)"
+    ></app-text-search>
+  </ng-template>
+</app-header>
+
+<p-card class="mt-4">
+  <main class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    @for (cinema of cinemaCatalog$ | async; track cinema?.id) {
+      <app-cinema-card
+        (cinemaSelect)="dialog.open(cinema)"
+        class="h-full"
+        [cinema]="cinema"
+      ></app-cinema-card>
+    } @empty {
+      <p>Каталог пуст 🥲</p>
+    }
+  </main>
+</p-card>
+
+<app-cinema-dialog #dialog></app-cinema-dialog>

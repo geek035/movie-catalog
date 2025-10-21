@@ -1,0 +1,34 @@
+<p-card class="bg-highlight-emphasis h-full">
+  <ng-template #header>
+    <div class="relative">
+      <p-chip
+        class="text-primary-100 absolute top-2 right-3 bg-indigo-400"
+        [label]="cinema().rating.toString()"
+      ></p-chip>
+      <img
+        class="w-full rounded-md md:max-h-[300px] xl:max-h-[380px]"
+        alt="Cinema poster"
+        [src]="cinemaPosterSource()"
+      />
+    </div>
+  </ng-template>
+
+  <ng-template #title>
+    <div class="flex w-full items-center gap-2">
+      <p-button size="small" class="bg-highlight rounded-2xl" (click)="handleTitleClick()">
+        {{ cinema().title }}
+      </p-button>
+      <p-tag class="ml-auto" [value]="cinema().year.toString()" severity="contrast"></p-tag>
+    </div>
+  </ng-template>
+
+  <p class="text-primary-300 line-clamp-3">{{ cinema().description }}</p>
+
+  <ng-template #footer>
+    <div class="no-scrollbar mt-auto flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+      @for (tag of cinema().tags; track $index) {
+        <p-tag [value]="tag"></p-tag>
+      }
+    </div>
+  </ng-template>
+</p-card>

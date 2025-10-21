@@ -1,5 +1,3 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -21,7 +19,9 @@
       "@entities/*": ["src/entities/*"],
       "@features/*": ["src/features/*"],
       "@widgets/*": ["src/widgets/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@server/*": ["server/*"],
+      "@environments": ["src/environments"]
     }
   },
   "angularCompilerOptions": {
@@ -38,6 +38,9 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tsconfig.server.json"
     }
   ]
 }

@@ -1,0 +1,13 @@
+:host ::ng-deep .p-card {
+  display: flex;
+  gap: 0.5rem;
+}
+
+:host ::ng-deep .p-card-body {
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+:host ::ng-deep .p-button {
+  text-align: start;
+}

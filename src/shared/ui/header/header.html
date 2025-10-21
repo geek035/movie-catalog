@@ -1,0 +1,18 @@
+<header>
+  <p-toolbar class="flex-col md:flex-row">
+    <ng-template #start>
+      <p-button class="hidden md:block" icon="pi pi-home" [routerLink]="homeLink"></p-button>
+      <app-dark-mode-switcher class="hidden md:block"></app-dark-mode-switcher>
+      <ng-container *ngTemplateOutlet="headerStart"></ng-container>
+      <app-header-menu-items class="ml-auto md:hidden"></app-header-menu-items>
+    </ng-template>
+
+    <ng-template #center>
+      <ng-container *ngTemplateOutlet="headerCenter"></ng-container>
+    </ng-template>
+
+    <ng-template #end>
+      <ng-container *ngTemplateOutlet="headerEnd"></ng-container>
+    </ng-template>
+  </p-toolbar>
+</header>

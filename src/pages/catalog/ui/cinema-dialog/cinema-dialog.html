@@ -1,0 +1,42 @@
+<p-dialog class="bg-primary-900" [(visible)]="visible">
+  <ng-template #header>
+    <h2 class="text-primary-50 text-2xl font-bold">{{ cinema()?.title }}</h2>
+  </ng-template>
+
+  <ng-template #content>
+    <section
+      class="bg-highlight-emphasis w-[80vw] pb-4 sm:w-[65vw] md:w-[50vw] lg:w-[45vw] xl:w-[40vw]"
+    >
+      <img
+        alt="Cinema poster"
+        class="float-right mb-4 ml-4 w-full self-start md:max-w-[200px] md:rounded-bl-2xl xl:max-w-[300px]"
+        [src]="cinemaPosterSource()"
+      />
+
+      <p class="text-primary-50 m-3 pt-4 font-bold">Жанры:</p>
+
+      @for (tag of cinema()?.tags; track $index) {
+        <p-tag class="bg-emphasis m-1 ml-4" [value]="tag"></p-tag>
+      }
+
+      <div class="flex flex-wrap gap-4">
+        <div>
+          <p class="text-primary-50 m-3 font-bold">Год выпуска</p>
+          <p-tag class="m-1 ml-4" [value]="cinema()?.year?.toString()" severity="contrast"></p-tag>
+        </div>
+
+        <div>
+          <p class="text-primary-50 m-3 font-bold">Рейтинг</p>
+          <p-tag
+            class="m-1 ml-4"
+            [value]="cinema()?.rating?.toString()"
+            severity="contrast"
+          ></p-tag>
+        </div>
+      </div>
+
+      <p class="text-primary-50 m-3 font-bold">Описание</p>
+      <p class="text-primary-50 m-3">{{ cinema()?.description }}</p>
+    </section>
+  </ng-template>
+</p-dialog>
