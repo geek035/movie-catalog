@@ -9,7 +9,7 @@
     "build:server": "tsc -P tsconfig.server.json",
     "watch": "ng build --watch --configuration development",
     "watch:server": "nodemon --watch server --exec ts-node -P tsconfig.server.json server/index.ts",
-    "copy:server": "cpx \"server/**/*.json\" out-tsc/server",
+    "copy:server": "cpx \"server/**/*.{json,jpeg,jpg}\" out-tsc/server",
     "test": "ng test",
     "serve:ssr:movie-catalog": "node dist/movie-catalog/server/server.mjs",
     "lint": "ng lint",

@@ -9,6 +9,7 @@ export const MOCK_CINEMA_CATALOG: CinemaModel[] = [
     tags: ['фантастика', 'приключения', 'космос'],
     year: 2022,
     rating: 8.4,
+    image: 'https://via.placeholder.com/600/92c952',
   },
   {
     id: '2',
@@ -18,6 +19,7 @@ export const MOCK_CINEMA_CATALOG: CinemaModel[] = [
     tags: ['триллер', 'детектив', 'криминал'],
     year: 2020,
     rating: 7.9,
+    image: 'https://via.placeholder.com/600/771796',
   },
   {
     id: '3',
@@ -27,6 +29,7 @@ export const MOCK_CINEMA_CATALOG: CinemaModel[] = [
     tags: ['комедия', 'дружба', 'семья'],
     year: 2021,
     rating: 7.3,
+    image: 'https://via.placeholder.com/600/24f355',
   },
   {
     id: '4',
@@ -35,6 +38,7 @@ export const MOCK_CINEMA_CATALOG: CinemaModel[] = [
     tags: ['драма', 'история', 'война'],
     year: 2019,
     rating: 8.1,
+    image: 'https://via.placeholder.com/600/d32776',
   },
   {
     id: '5',
@@ -44,5 +48,6 @@ export const MOCK_CINEMA_CATALOG: CinemaModel[] = [
     tags: ['фантастика', 'киберпанк', 'боевик'],
     year: 2023,
     rating: 8.7,
+    image: 'https://via.placeholder.com/600/f66b97',
   },
 ];

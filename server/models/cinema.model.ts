@@ -5,4 +5,5 @@ export interface CinemaModel {
   tags: string[];
   year: number;
   rating: number;
+  image: string;
 }

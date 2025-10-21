@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
+import { environment } from '@environments';
 import { CinemaModel } from '@server/models';
 import { CardModule } from 'primeng/card';
 
@@ -9,4 +10,7 @@ import { CardModule } from 'primeng/card';
 })
 export class CinemaCard {
   public readonly cinema = input.required<CinemaModel>();
+  public readonly cinemaPosterSource = computed(
+    () => `${environment.api}/images/${this.cinema().image}`,
+  );
 }

@@ -4,16 +4,22 @@
   </ng-template>
 
   <ng-template #headerEnd>
-    <app-text-search class="w-48 md:w-[380px]" [(textSearch)]="textSearch"></app-text-search>
+    <app-text-search
+      class="w-48 md:w-[380px]"
+      (textSearch)="handleTextSearchUpdate($event)"
+    ></app-text-search>
   </ng-template>
 </app-header>
 
 <p-card class="mt-4">
-  <main>
-    @for (cinema of cinemaCatalog$ | async; track cinema.id) {
-      <app-cinema-card [cinema]="cinema"></app-cinema-card>
+  <main class="lg: flex w-full flex-wrap justify-around gap-8 md:justify-start">
+    @for (cinema of cinemaCatalog$ | async; track cinema?.id) {
+      <app-cinema-card
+        class="w-full sm:w-[calc(50%-2rem)] md:w-[calc(33.333%-2rem)] lg:w-[calc(20%-2rem)]"
+        [cinema]="cinema"
+      ></app-cinema-card>
     } @empty {
-      <p>No info</p>
+      <p>Каталог пуст 🥲</p>
     }
   </main>
 </p-card>

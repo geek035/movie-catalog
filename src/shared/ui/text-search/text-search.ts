@@ -1,8 +1,9 @@
-import { Component, input, model } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-text-search',
@@ -11,13 +12,13 @@ import { InputTextModule } from 'primeng/inputtext';
 })
 export class TextSearch {
   public label = input<string>('Поиск');
-  public textSearch = model<string | null>(null);
+  public textSearch = output<string | null>();
 
   public readonly textController = new FormControl(null);
 
   constructor() {
     this.textController.valueChanges
-      .pipe(takeUntilDestroyed())
-      .subscribe(value => this.textSearch.set(value));
+      .pipe(debounceTime(300), takeUntilDestroyed())
+      .subscribe(value => this.textSearch.emit(value));
   }
 }
