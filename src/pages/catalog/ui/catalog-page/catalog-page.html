@@ -12,12 +12,9 @@
 </app-header>
 
 <p-card class="mt-4">
-  <main class="lg: flex w-full flex-wrap justify-around gap-8 md:justify-start">
+  <main class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     @for (cinema of cinemaCatalog$ | async; track cinema?.id) {
-      <app-cinema-card
-        class="w-full sm:w-[calc(50%-2rem)] md:w-[calc(33.333%-2rem)] lg:w-[calc(20%-2rem)]"
-        [cinema]="cinema"
-      ></app-cinema-card>
+      <app-cinema-card class="h-full" [cinema]="cinema"></app-cinema-card>
     } @empty {
       <p>Каталог пуст 🥲</p>
     }

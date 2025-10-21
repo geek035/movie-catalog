@@ -4,3 +4,14 @@
 @custom-variant dark (&:where(.app-dark-mode, .app-dark-mode *));
 @import './app/styles/normalize.css';
 @import 'primeicons/primeicons.css';
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
